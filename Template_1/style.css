@@ -1,0 +1,245 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.header{
+    background-image: url('https://media.istockphoto.com/id/1442417585/photo/person-getting-a-piece-of-cheesy-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=k60TjxKIOIxJpd4F4yLMVjsniB4W1BpEV4Mi_nb4uJU=');
+    background-size: cover;
+    height: 500px;
+}
+.nav-bar{
+    background-color: lab(40.91% 0.79 0.27);
+    height: 40px;
+}
+.nav-bar :hover{
+    background-color: White;
+    color: black;
+}
+nav :hover{
+    background-color: black;
+}
+.nav-bar a{
+    color: white;
+    margin-left: 10px;
+    margin-right: 30px;
+    text-decoration: none;
+    font-size:xx-large;
+}
+.extra{
+    margin-top: 80px;
+}
+.extra h1{
+    color: white;
+    text-align: center;
+    font-size: 80px;
+}
+.extra button{
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 40px;
+    border: none;
+    height: 60px;
+    width: 400px;
+}
+.Buton :hover{
+    background-color: white;
+    color: black;
+}
+.extra2{
+    margin-top: 60px;
+    width: 340px;
+}
+.extra2 p{
+    color: black;
+    background-color: white;
+    font-size: 30px;
+}
+.menu-main{
+    background-color: black;
+    height: 1000px;
+}
+.menu-main h1{
+    color: white;
+    text-align: center;
+    font-size: 60px;
+}
+.menu {
+  border: 2px solid #000;
+  width: 70%;
+  background-color: #fff;
+  margin-left: 200px;
+  margin-top: 30px;
+}
+
+.menu-header {
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  font-size: 40px;
+}
+.menu-item {
+  padding: 20px;
+  border-bottom: 2px solid #ddd;
+}
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.item-name {
+  font-size: 30px;
+}
+
+.item-price {
+  background-color: #f2f2f2;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 30px;
+}
+
+.item-desc {
+  color: #555;
+  font-size: 20px;
+}
+
+.badge {
+  font-size: 22px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.hot {
+  background-color: red;
+  color: white;
+}
+
+.new {
+  background-color: lightgray;
+  color: black;
+}
+#about {
+  background-color: #f07067;
+  color: white;
+  padding: 60px 20px;
+}
+
+#about .content {
+  max-width: 900px;
+  margin: auto;
+}
+
+#about .section-title {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+#about p {
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+#about img.circle-img {
+  width: 150px;
+  border-radius: 50%;
+  float: right;
+  margin-left: 20px;
+}
+
+#about img.responsive-img {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+#about h2 {
+  font-size: 36px;
+  margin-top: 40px;
+}
+#about .row {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+#about .column {
+  flex: 1;
+  min-width: 200px;
+}
+#contact {
+  background-color: #607d8b;
+  color: white;
+  padding: 60px 20px;
+}
+
+#contact .content {
+  max-width: 900px;
+  margin: auto;
+}
+
+#contact .section-title {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+#contact p {
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+#contact form {
+  margin-top: 30px;
+}
+#contact input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#contact button {
+  width: 100%;
+  padding: 12px;
+  font-size: 20px;
+  background-color: #ccc;
+  color: black;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+#contact button:hover {
+  background-color: #bbb;
+}
+img{
+  width: 100%;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  filter: grayscale(100%);
+}
+.footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 30px;
+  height: 50px;
+}
+.footer a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
