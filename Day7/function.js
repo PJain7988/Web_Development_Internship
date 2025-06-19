@@ -120,6 +120,14 @@ function higherOrderFun(fun){
     let res = fun();
     return res+5;
 }
+console.log("----------------------------- Annoymus function ---------------------------------");
+// Annoymus function is a function which is not defined with any name.
 
 let answer = higherOrderFun(helper);
 console.log(answer); // gives 15
+
+let result2 = higherOrderFun(function(){
+    console.log("this is annoymous function");
+    return "20";
+})
+console.log(result2); // gives 25
