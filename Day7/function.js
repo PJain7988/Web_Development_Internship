@@ -118,16 +118,37 @@ function helper(){
 function higherOrderFun(fun){
     console.log("higher order executing...");
     let res = fun();
-    return res+5;
+    return +(res)+5;  // to make string
 }
-console.log("----------------------------- Annoymus function ---------------------------------");
-// Annoymus function is a function which is not defined with any name.
 
 let answer = higherOrderFun(helper);
 console.log(answer); // gives 15
+console.log("----------------------------- Annoymus function ---------------------------------");
+// Annoymus function is a function which is not defined with any name.
+// It is used when we need to use a function only once.
 
 let result2 = higherOrderFun(function(){
     console.log("this is annoymous function");
     return "20";
 })
 console.log(result2); // gives 25
+
+console.log("----------------------------- Callback function ---------------------------------");
+// callback function is a function which is passed as an argument to another function.
+// It is used when we need to perform some operation after some operation is completed.
+
+function cb(a,b){
+    console.log("Call back function is executing....");
+    return a+b;
+}
+
+function parent(a,b,fun){
+    console.log("Parent function is executing...");
+    let sum = a+b;
+    // let res = fun(sum,20);
+    // return res;
+    return fun(sum,20);
+}
+
+let answer2 = parent(10,20,cb);
+console.log(answer2); // gives 50
