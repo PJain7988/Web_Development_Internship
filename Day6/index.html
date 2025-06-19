@@ -15,3 +15,44 @@
     
 </body>
 </html>
+
+<!-- PS D:\Full_Stack_Internship> git commit -m "Change from project branch"
+PS D:\Full_Stack_Internship> git branch
+* conflict-branch
+  main
+  origin
+  project
+PS D:\Full_Stack_Internship> git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+PS D:\Full_Stack_Internship> git add .
+PS D:\Full_Stack_Internship> git commit -m "List added"
+[main 1e06792] List added
+ 1 file changed, 3 insertions(+)
+PS D:\Full_Stack_Internship> git push origin main
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 830 bytes | 138.00 KiB/s, done.
+Total 8 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+To https://github.com/PJain7988/Web_Development_Internship.git
+   ed06983..1e06792  main -> main
+PS D:\Full_Stack_Internship> git checkout project
+Switched to branch 'project'
+PS D:\Full_Stack_Internship> git add .
+PS D:\Full_Stack_Internship> git commit -m "changes added"
+[project a969997] changes added
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+PS D:\Full_Stack_Internship> git merge main
+Auto-merging Day6/index.html
+CONFLICT (content): Merge conflict in Day6/index.html
+Automatic merge failed; fix conflicts and then commit the result.
+PS D:\Full_Stack_Internship> git add .
+PS D:\Full_Stack_Internship> git commit -m "Added"
+[project cd68ede] Added
+PS D:\Full_Stack_Internship> git push origin main
+Everything up-to-date
+PS D:\Full_Stack_Internship>  -->
