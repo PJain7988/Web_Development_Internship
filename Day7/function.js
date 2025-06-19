@@ -152,3 +152,31 @@ function parent(a,b,fun){
 
 let answer2 = parent(10,20,cb);
 console.log(answer2); // gives 50
+
+console.log("----------------------------- Square and cube ---------------------------------");
+// Square is a function which takes a number as an argument and returns the square of that number.
+
+let arr = [1,2,3,4,5,6];
+function square(num){
+    return num*num;
+    // return num**2;
+}
+
+function cube(num){
+    return num*num*num;
+    // return num**3;
+}
+
+function ArrConverted(array,fun){
+    let ar = [];
+    for(let element of array){
+        let powVal = fun(element);
+        ar.push(powVal);
+    }
+    return ar;
+}
+
+let sqArr = ArrConverted(arr,square);
+console.log("Square of ",arr," is : ",sqArr); // gives [1,4,9,16,25,36]
+let cubeArr = ArrConverted(arr,cube);
+console.log("Cube of   ",arr," is : ",cubeArr); // gives [1,8,27,64,125,216]
