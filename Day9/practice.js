@@ -4,10 +4,12 @@ form.addEventListener("submit",async (e)=>{
     let search = e.target.children[0].value;
     let res = await axios.get(`https://www.omdbapi.com/?s=${search}&apikey=b9e28845`);
     console.log(res.data.Search);
-    createcard(res.data.Search)
+    localStorage.setItem("movies",JSON.stringify(res.data.Search));
+    createcard()
 })
 const container = document.getElementById("container");
-function createcard(movies){
+function createcard(){
+    let movies = JSON.parse(localStorage.getItem("movies"));
     container.innerHTML
     movies.forEach(movie =>{
         const div = document.createElement("div");
@@ -19,3 +21,9 @@ function createcard(movies){
         container.append(div);
     })
 }
+
+if(localStorage.getItem("movies")){
+    createcard();
+}
+
+localStorage.removeItem("name");
