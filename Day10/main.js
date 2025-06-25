@@ -19,3 +19,32 @@ console.log("Storage - ",localStorage.getItem("obj"));
 let storeObj = JSON.parse(localStorage.getItem("obj"));
 console.log(storeObj)
 console.log(storeObj.name);
+
+const h1=document.getElementsByTagName("h1")[0];
+const getQR = async (url) => {
+      const res = await axios.get(
+        `https://api.api-ninjas.com/v1/qrcode?format=png&data=${encodeURIComponent(url)}`,
+        {
+          headers: {
+            "X-Api-Key": "RvmBEYT3I0a0yMzSbNj6iQ==EN2QugiRhCqKcq3T"
+          },
+          responseType: "arraybuffer"
+        }
+      );
+
+      // Convert to Base64
+      const binary = new Uint8Array(res.data).reduce(
+        (acc, byte) => acc + String.fromCharCode(byte), ''
+      );
+      const base64 = btoa(binary);
+
+      // Create and append the image
+      const img = document.createElement("img");
+      img.src = `data:image/png;base64,${base64}`;
+      img.alt = "QR Code";
+
+      const h1 = document.querySelector("h1");
+      h1.after(img);
+    };
+
+    getQR("https://pjain7988.github.io/Web_Development_Internship/Template_1/");
