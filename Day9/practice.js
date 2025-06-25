@@ -10,7 +10,7 @@ form.addEventListener("submit",async (e)=>{
 const container = document.getElementById("container");
 function createcard(){
     let movies = JSON.parse(localStorage.getItem("movies"));
-    container.innerHTML
+    container.innerHTML = "";
     movies.forEach(movie =>{
         const div = document.createElement("div");
         const img = document.createElement("img");
