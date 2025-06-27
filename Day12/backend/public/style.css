@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  width: 80%;
+  padding: 40px 20px;
+  border: 2px solid rgb(179, 173, 173);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.background{
+    background-color: green;
+    color:white;
+}
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+h1 {
+  margin-bottom: 25px;
+  color: #222;
+  font-size: 28px;
+}
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #8d8f92;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background-color: rgb(226, 221, 221);
+  font-size: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 12px;
+}
+
+.extra {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-extra {
+  background-color: #22c55e;
+  padding: 0.25rem 0.75rem;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  height: 30px;
+}
+
+.btn-extra:hover {
+  background-color: #16a34a;
+}
+
+.btn-extra2 {
+  background-color: #ef4444;
+  padding: 0.35rem 0.75rem;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.btn-extra2:hover {
+  background-color: #dc2626;
+}
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 18px;
+  border: 1px solid #5a5959;
+  border-radius: 6px;
+}
+
+form button {
+  padding: 12px 20px;
+  background-color: greenyellow;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: green;
+  color: white;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  width: 120px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* .filter-buttons button:hover {
+  background-color: green;
+  color: white;
+} */
+
+.clear-btn {
+  margin: 0 auto;
+  display: block;
+  background-color: #ff4d4d;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  width: 100%; 
+  max-width: 180px;
+}
+
+.clear-btn:hover {
+  background-color: #e60000;
+  color: white;
+}
