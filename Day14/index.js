@@ -10,8 +10,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 // routes
-const userRouter = require("./routes/user.routes");
-app.use("/user",userRouter)
+// const userRouter = require("./routes/user.routes");
+// app.use("/user",userRouter)
+const todoRouter = require("./routes/todo.routes");
+const connectToDB = require('./db/connection');
+app.use("/",todoRouter);  //every request will go to todoRouter
 
 
 app.listen(PORT,async()=>{
