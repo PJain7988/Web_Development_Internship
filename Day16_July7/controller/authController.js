@@ -1,12 +1,15 @@
 import bcryptjs from "bcryptjs"
+import {generateTokenAndSetCookie} from "../utilis/generateTokenAndSetCookie.js"
 import {
-    send
-
-} from "../mailTrap/emails.js";
-import {User} from "../models/userModel.js"
+    sendVerificationEmail,
+    sendWelcomeEmail,
+    sendPasswordResetEmail,
+} from "../mailTrap/emails.js"
+import User from "../models/userModel.js"
 
 export const signup = async (req,res)=>{
     const{email,password,name} = req.body;
+    // console.log("ssnkssssssssssssssssssssssss")
 
     try{
         if(!email || !password || !name){
@@ -49,3 +52,96 @@ export const signup = async (req,res)=>{
             res.status(500).json({success: false,message: error.message})
     }
 };
+export const verifyEmail = async(req,res)=>{
+    try{
+        const {code} = req.body;
+        const user = await User.findOne({
+            verificationToken : code,
+            verificationExpiresAt : {$gt : Date.now()}
+        })
+        if(!user){
+            return res.status(400).json({
+                success:false,
+                message : "Invalid or expired token"
+            })
+        }
+        user.isverified = true;
+        user.verificationToken = undefined;
+        user.verificationExpiresAt = undefined;
+        await user.save();
+
+        await sendWelcomeEmail(user.name,user.email);
+        return res.status(200).json({
+            sucess:true,
+            message:"email verified"
+        })
+    } catch(error){
+        console.log(error)
+    }
+}
+
+export const login = async(req,res)=>{
+    try{
+        const {email,password} = req.body;
+        const user = await User.findOne({email});
+        if(!user){
+            return res.status(400).json({
+                success: false,
+                message: "Email does not exist"})
+        }
+        const isValidPassword = await bcryptjs.compare(password,user.password);
+        if(!isValidPassword){
+            return res.status(400).json({
+                success: false,
+                message: "Invalid password"})
+            }
+        user.lastLogin = new Date();
+        await user.save();
+
+        generateTokenAndSetCookie(res,user._id);
+        res.status(200).json({
+            success: true,
+            message: "User logged in successfully"
+        })
+
+    }catch(error){
+        console.log(error);
+    }
+}
+
+export const logout = async(req,res)=>{
+    try{
+        res.clearCookie("token");
+        res.status(200).json({
+            success: true,
+            message: "User logged out successfully"
+            })
+        }catch(error){
+            console.log(error);
+        }
+}
+
+export const forgotPassword = async(req,res)=>{
+    try{
+        const {email} = req.body;
+        const user = await User.findOne({email});
+        if(!user){
+            return res.status(400).json({
+                success: false,
+                message: "Email does not exist"
+                })
+        }
+
+        const resetToken = Math.floor(Math.random()*1000000);
+        const resetPasswordExpiresAt = Date.now() + 1 * 60 * 60 * 1000;
+
+        user.resetToken = resetToken;
+        user.resetPasswordExpiresAt = resetPasswordExpiresAt;
+
+        await user.save();
+
+        await sendPasswordResetEmail(user.email,`${process.env.CLIENT_URL}/reset-password/${resetToken}`);
+    }catch(error){
+        console.log(error);
+    }
+}
