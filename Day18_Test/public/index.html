@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>E-commerce Product List</h1>
+
+  <input type="text" id="searchInput" placeholder="Search product..." />
+  <button onclick="searchProducts()">Search</button>
+  <button onclick="showAllProducts()">Show All Products</button>
+  <br/><br/>
+
+  <input type="text" id="name" placeholder="Product Name" />
+  <input type="number" id="price" placeholder="Price" />
+  <input type="number" id="quantity" placeholder="Quantity" />
+  <input type="text" id="description" placeholder="Description" />
+  <input type="text" id="category" placeholder="Category" />
+  <button onclick="createProduct()">Add Product</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="productList"></tbody>
+  </table>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -53,12 +53,14 @@ export const signup = async (req,res)=>{
     }
 };
 export const verifyEmail = async(req,res)=>{
+    const {code} = req.body.code?.trim();
+    console.log(code);
     try{
-        const {code} = req.body;
         const user = await User.findOne({
             verificationToken : code,
             verificationExpiresAt : {$gt : Date.now()}
         })
+        // console.log("User found:", user);
         if(!user){
             return res.status(400).json({
                 success:false,
@@ -72,7 +74,7 @@ export const verifyEmail = async(req,res)=>{
 
         await sendWelcomeEmail(user.name,user.email);
         return res.status(200).json({
-            sucess:true,
+            success:true,
             message:"email verified"
         })
     } catch(error){
@@ -145,3 +147,11 @@ export const forgotPassword = async(req,res)=>{
         console.log(error);
     }
 }
+
+// export const resetPassword = async(req,res)=>{
+//     try{
+
+//     }catch(error){
+//         console.log(error);
+//     }
+// } 
