@@ -1,7 +1,13 @@
 exclude:
   - node_modules
   - Day10/backend
+  - **/node_modules
+  - vendor
+  - .github
+  - Gemfile
+  - Gemfile.lock
   - package-lock.json
-  - README.md
-  - tailwind.config.js
+  - package.json
   - postcss.config.js
+  - tailwind.config.js
+  - vite.config.js
