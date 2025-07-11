@@ -1,0 +1,7 @@
+exclude:
+  - node_modules
+  - Day10/backend
+  - package-lock.json
+  - README.md
+  - tailwind.config.js
+  - postcss.config.js
