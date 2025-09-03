@@ -1,16 +1,22 @@
-function press(number){
-    const display = document.getElementById("display");
-    display.value += number;
-}
-function calculate(){
-    const display = document.getElementById("display");
-    try{
-        display.value = eval(display.value);
-    }catch(error){
-        display.number = "error"
-    }
+let expression = "";
+
+function press(value) {
+  expression += value;
+  document.getElementById("expression").innerText = expression;
+  document.getElementById("result").innerText = ""; // clear result until "=" pressed
 }
 
-function clearDisplay(){
-    document.getElementById("display").value= "";
+function calculate() {
+  try {
+    let result = eval(expression);
+    document.getElementById("result").innerText = "= " + result;
+  } catch (e) {
+    document.getElementById("result").innerText = "Error";
+  }
+}
+
+function clearDisplay() {
+  expression = "";
+  document.getElementById("expression").innerText = "";
+  document.getElementById("result").innerText = "";
 }

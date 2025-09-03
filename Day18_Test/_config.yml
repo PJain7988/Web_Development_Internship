@@ -1,8 +1,0 @@
-exclude:
-  - node_modules
-  - vendor
-  - Gemfile
-  - Gemfile.lock
-  - package-lock.json
-  - yarn.lock
-  - README.md
